@@ -20,5 +20,5 @@ jobs:
           SECRET1: ${{ inputs.SECRET1 }}
           SECRET2: ${{ secrets.SECRET3 }}
           SECRET3: ${{ secrets.SECRET3 }}
-        run: docker run alpine:latest env | sort
+        run: env | sort
               
