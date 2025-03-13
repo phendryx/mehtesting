@@ -1,0 +1,24 @@
+name: Run UI Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment To Test Against'
+        type: choice
+        default: dev
+        options:
+          - dev
+          - stage
+
+jobs:
+  build:
+    runs-on: [ linux ]
+    steps:
+      - name: Run Test
+        env:
+          SECRET1: ${{ inputs.SECRET1 }}
+          SECRET2: ${{ secrets.SECRET3 }}
+          SECRET3: ${{ secrets.SECRET3 }}
+        run: docker run docker/whalesay env | sort
+              
