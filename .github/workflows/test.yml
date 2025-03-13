@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Run Test
         env:
-          SECRET1: ${{ inputs.SECRET1 }}
+          SECRET1: ${{ secrets.SECRET1 }}
           SECRET2: ${{ secrets.SECRET3 }}
           SECRET3: ${{ secrets.SECRET3 }}
-        run: env | sort
+        run: docker run alpine:latest env | sort
               
