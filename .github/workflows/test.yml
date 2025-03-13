@@ -16,10 +16,14 @@ jobs:
     runs-on: [ ubuntu-latest ]
     environment: ${{ inputs.environment }}
     steps:
-      - name: Run Test
+      - uses: actions/checkout@v4
+
+      - name: Run docker compose
+        uses: hoverkraft-tech/compose-action@v2.0.1
         env:
           SECRET1: ${{ secrets.SECRET1 }}
           SECRET2: ${{ secrets.SECRET3 }}
           SECRET3: ${{ secrets.SECRET3 }}
-        run: docker compose up
+
+
               
