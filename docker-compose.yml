@@ -1,0 +1,8 @@
+services:
+  meh:
+    image: alpine:latest
+    environment:
+      SECRET1: ${SECRET1}
+      SECRET2: ${SECRET2}
+      SECRET3: ${SECRET3}
+    command: env | sort
